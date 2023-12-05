@@ -1,0 +1,33 @@
+@Model pedidos
+@{Layout = "/Views/Shared/Layout.cshtml";}
+<body>
+    <table class="table table-hover">
+        <tr>
+            <th>PedidoId</th>
+            <th>ProdutoId</th>
+            <th>UserId</th>
+            <th>NomeProd</th>
+            <th>Descricao</th>
+            <th>NomeCategoria</th>
+            <th>Preco</th>
+            <th>Qtd</th>
+            <th>TotalPedido</th>
+            <th>DataPedido</th>
+            <th>StatusPedido</th>
+            <th colspan="2">&nbsp;</th>
+        </tr>
+
+    @foreach(var pedidos in Model){
+        <td>@pedidos.idPedido</td>
+        <td>@pedidos.pedidosProdutos.IdProduto</td>
+        <td>@pedidos.UserId</td>
+        <td>@pedidos.produtos.NomeProd</td>
+        <td>@pedidos.produtos.Descricao</td>
+        <td>@pedidos.categoria.NomeCategoria</td>
+        <td>@pedidos.pedidosProdutos.Preco</td>
+        <td>@pedidos.pedidosProdutos.Qtd</td>
+        <td>@pedidos.pedidosProdutos.TotalPedido</td>
+        <td>@pedidos.DataPedido</td>
+        }
+    <a href="#" class="btn btn-primary">Compra zézin</a>
+</body>

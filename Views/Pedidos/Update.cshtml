@@ -1,0 +1,44 @@
+@model Pedidos
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+
+<style>
+  .boxUpdate{
+    margin: auto;
+    margin-top:15vw;
+    margin-bottom:10vw;
+    max-width:30vw;
+    align-items:center;
+    text-align:center;
+    border: 0.1vw solid black;
+    border-radius: 0.4vw;
+  }
+  .boxUpdate input{
+      text-align:center;
+  
+  }
+  .boxUpdate nav ol input{
+    align-items:center;
+  }
+  .footer{
+    position:fixed;
+  }
+</style>
+<div class="boxUpdate">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Pedidos/index">Produtos</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Update</li>
+  </ol>
+</nav>
+
+<form action="/Pedidos/Update/@Model.idPedido" method="POST">
+<p> Mude o Produto</p>
+    <input name="IdProduto" class="form-control" value="@Model.pedidosProdutos.IdProduto"/>
+    <p> Mude a Quantidade</p>
+    <input name="Qtd" class="form-control" value="@Model.pedidosProdutos.Qtd"/>
+
+    <br/>
+    <button class="btn btn-primary">Atualizar</button>
+</form>
+</div>

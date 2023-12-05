@@ -1,0 +1,36 @@
+
+@model List<Categorias>
+
+
+<style>
+    .table{
+        margin-top: 10vw;
+    }
+
+
+
+    .footer{
+        position:fixed;
+    }
+</style>
+
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Categoria</th>
+            <th colspan="2">&nbsp;</th>
+        </tr>
+
+        @foreach(var categorias in Model)
+        {
+        <tr>
+            <td>@categorias.IdCategoria</td>
+            <td>@categorias.NomeCategoria</td>
+            <td><a href="/categorias/delete/@categorias.IdCategoria">Delete</a></td>
+            <td><a href="/categorias/update/@categorias.IdCategoria">Update</a></td>
+            </tr>
+        }
+</table>
+<a href="/categorias/create" class="btn btn-primary">Create</a>

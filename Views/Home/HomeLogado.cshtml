@@ -1,0 +1,86 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+@using Microsoft.AspNetCore.Http
+@using System.Text.Json;
+@model List<Produtos>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+
+
+
+<div class="carrossel">
+  <div class="tituloCarrossel">
+    <h2>Promoções</h2>
+  </div>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active boxCarrossel">
+        <a href="produto.html"
+          ><img
+            src="/src/images/12.png"
+            alt=""
+            style="width: 100%; height: 75vh"
+        /></a>
+        <div class="carousel-caption">
+          <p></p>
+        </div>
+      </div>
+
+ @foreach(var produtos in Model){
+  <div class="item">
+        <a href="produto2.html">
+          <img
+            src="/src/images/13.png"
+            alt=""
+            style="width: 100%; height: 75vh"
+        /></a>
+        <div class="carousel-caption">
+          <p></p>
+        </div>
+      </div>
+}
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Proximo</span>
+    </a>
+  </div>
+</div>
+
+ @foreach(var produtos in Model){
+  <div class="produtos">
+    <div class="boxProduto">
+      <div class="tituloProduto">
+        <h2>@produtos.NomeProd</h2>
+      </div>
+      <div class="imgProduto">
+        <img src="src/images/5.jpg" />
+      </div>
+          <div class="carrinhoPreco"></div>
+          <div class="precoProduto">
+          <a href="/produto/prod/@produtos.IdProduto">
+          <p>@produtos.Preco</p>
+        </a>
+      </div>
+      <div class="botaoCarrinho">
+        <a href="/produtos/prod/@produtos.IdProduto">
+          <img class="imgCarrinho" src="/src/images/carrinho.png" alt="Lupa" />
+        </a>
+      </div>
+    </div>
+  </div>
+}

@@ -1,0 +1,69 @@
+@using Microsoft.AspNetCore.Http
+@using System.Text.Json;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@* <!DOCTYPE html>
+<head>
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body class="container">
+    Bem vindo!<br/>
+    @{
+        string? session = HttpContextAccessor.HttpContext.Session.GetString("users");
+        Users? users = JsonSerializer.Deserialize<Users>(session);
+    }
+    <h1>@users.Name</h1>
+
+    <a href="/users/logout" class="btn btn-danger">Sair</a>
+</body>
+</html> *@
+
+<style>
+        .boxProduto{
+        margin-top: 10vw;
+        height:auto;
+        width: auto;
+    }
+
+    table .table-hover{
+        max-width:60vw;
+        max-height:90vw;
+    }
+
+    .table-hover{
+        font-family:Arial;
+        font-size: 1vw;
+    }
+    .container{
+        margin-bottom:0;
+    }
+
+    .footer{
+        bottom:0;
+    }
+</style>
+
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+<body class="container">
+    <div class="boxProduto">
+            WORK IN PROGRESS
+<title>Home</title>
+    Bem vindo!<br/>
+    @{
+        string? session = HttpContextAccessor.HttpContext.Session.GetString("users");
+        Users? users = JsonSerializer.Deserialize<Users>(session);
+    }
+    <h1>@users.Name</h1>
+
+    <a href="/users/logout" class="btn btn-danger">Sair</a>
+
+
+<a href="/Clientes/Index" class="btn btn-primary">Clientes</a>
+<a href="/Produtos/Index" class="btn btn-primary">Produtos</a>
+<a href="/Categorias/Index" class="btn btn-primary">Categorias</a>
+<a href="/Endereco/Index" class="btn btn-primary">Edereço</a>
+<a href="/Pedidos/Index" class="btn btn-primary">Pedidos</a>
+    </div>
+    
+</body>

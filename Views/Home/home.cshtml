@@ -1,0 +1,101 @@
+@{Layout = "/Views/Shared/Layout.cshtml";}
+@model List<Produtos>
+<style>
+.precoProduto p {
+  color: white;
+  font-size: 1.2vw;
+  padding: 0.9vw;
+  background-color: rgb(27, 19, 173);
+  border-radius: 1.3vw;
+  text-decoration: none;
+}
+.produtos{
+  margin-top:10vw;
+}
+
+</style>
+<div class="carrossel">
+  <div class="tituloCarrossel">
+    <h2>Promoções</h2>
+  </div>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active boxCarrossel">
+        <a href="/Home/Home"
+          ><img
+            src="/src/images/12.png"
+            alt=""
+            style="width: 100%; height: 75vh"
+        /></a>
+        <div class="carousel-caption">
+          <p></p>
+        </div>
+      </div>
+      
+      @foreach(var produtos in Model){
+      <div class="item">
+        <a href="/produtos/produto/@produtos.IdProduto">
+          <img
+            src="data:image/png;base64,@produtos.Imagem"
+            alt=""
+            style="width: 100%; height: 75vh"
+        /></a>
+        <div class="carousel-caption">
+          <p></p>
+        </div>
+      </div> 
+      }
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Proximo</span>
+    </a>
+  </div>
+</div>
+
+<div class="produtos">
+  @foreach(var produtos in Model){
+    <div class="boxProduto">
+      <div class="tituloProduto">
+        <h2>@produtos.NomeProd</h2>
+      </div>
+      <div class="imgProduto">
+        <img src="data:image/png;base64,@produtos.Imagem">
+      </div>
+          <div class="carrinhoPreco">
+          <div class="precoProduto">
+          <a href="/produtos/Produto/@produtos.IdProduto">
+          <p>@produtos.Preco</p>
+        </a>
+      </div>
+      <div class="botaoCarrinho">
+        <a href="/produtos/Produto/@produtos.IdProduto">
+          <img class="imgCarrinho" src="/src/images/carrinho.png" alt="Lupa" />
+        </a>
+      </div>
+    </div>
+    </div>
+  }
+  </div>
+
+
+<div class="whatsapp">
+  <a href="https://web.whatsapp.com/">
+    <img src="/src/images/17.png" width="70vw" alt="Fale Conosco whatsapp" />
+  </a>
+</div>

@@ -1,0 +1,61 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+@using Microsoft.AspNetCore.Http
+@using System.Text.Json;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    string? session = HttpContextAccessor.HttpContext.Session.GetString("users");
+    Users? users = JsonSerializer.Deserialize<Users>(session);
+}
+<style> 
+
+    .boxProduto{
+        margin-top: 10vw;
+        height:auto;
+        width: auto;
+    }
+
+    table .table-hover{
+        max-width:60vw;
+        max-height:90vw;
+    }
+
+    .table-hover{
+        font-family:Arial;
+        font-size: 1vw;
+    }
+
+    .footer{
+        bottom:0;
+        position: fixed;
+    }
+    .carrinhoProduto {
+  @* display: flex;
+  flex-direction: row; *@
+  font-size: 1vw;
+  padding: 1.3vw;
+  background-color: rgb(27, 19, 173);
+  border-radius: 1.4vw;
+  text-align: center;
+  max-width: 15vw;
+  max-height: 7vh;
+  margin: auto;
+  
+  margin-top: 3vw;
+  line-height: 3vh;
+}
+.carrinhoProduto a {
+    text-align:center;
+  color: white;
+}
+button{
+    margin-bottom : 2vw;
+}
+</style>
+<body>
+    <div class="boxProduto">
+        <h2>@users.Name sua compra foi finalizada com Sucesso!!!</h2>
+    </div>
+    <div class="carrinhoProduto">
+        <a href="/Home/Home">Voltar para a Home</a>
+    </div>
+</body>

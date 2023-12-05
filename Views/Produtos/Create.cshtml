@@ -1,0 +1,27 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+<h2>TELA DO ADM INSERIR PRODUTOS</h2>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/produtos/index">produtos</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create</li>
+  </ol>
+</nav>
+
+<form action="/produtos/create" method="POST" enctype="multipart/form-data">
+    <input name="NomeProd" class="form-control" placeholder="Nome"/>
+    <input name="Descricao" class="form-control" placeholder="Descricao"/>
+    <input name="Preco" class="form-control" placeholder="Preco"/>
+    <input name="Quantidade" class="form-control" placeholder="Quantidade"/>
+    <input name="Status" class="form-control" placeholder="Status"/>
+    <input name="CategoriaId" class="form-control" placeholder="IdCategoria"/>
+    @* <select name="Categorias" class="form-control">
+      @foreach(var categorias in ViewBag.Categorias)
+      {
+      <option value="@categorias.IdCategoria">@categorias.NomeCategoria</option>
+      }
+    </select>  *@
+     <input type="file" name="Imagem" accept="image/*"/>
+    <br/>
+    <button class="btn btn-primary">Salvar</button>
+</form>

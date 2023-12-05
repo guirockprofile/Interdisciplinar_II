@@ -1,0 +1,16 @@
+@* @{ Layout = "/Views/Shared/_Layout.cshtml"; } *@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Pedidos/index">Pedidos</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create</li>
+  </ol>
+</nav>
+
+<form action="/Pedidos/AddPedido" method="POST">
+    <input name="UserId" class="form-control" placeholder="UserId"/>
+    <input name="idProduto" class="form-control" placeholder="Id do Produto"/>
+    <input name="Qtd" class="form-control" placeholder="Quantidade"/>
+    <br/>
+    <button class="btn btn-primary">Salvar</button>
+</form>

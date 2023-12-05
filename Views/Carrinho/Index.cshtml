@@ -1,0 +1,100 @@
+@using Microsoft.AspNetCore.Http
+@using System.Text.Json;
+@model List<Pedidos>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+@{
+    int idPedido = @Model[0].idPedido;
+}
+ @{
+          string? session = HttpContextAccessor.HttpContext.Session.GetString("users");
+           Users? users = null;
+            if (session != null)
+            {
+                users = JsonSerializer.Deserialize<Users>(session);
+            }
+            else
+            {
+                users = new Users();
+            }
+          };
+<style> 
+
+    .boxProduto{
+        margin-top: 10vw;
+        height:auto;
+        width: auto;
+    }
+
+    table .table-hover{
+        max-width:60vw;
+        max-height:90vw;
+    }
+
+    .table-hover{
+
+        font-family:Arial;
+        font-size: 1vw;
+        margin-bottom: 1vw;
+    }
+    table th{
+                text-align:center;
+    }
+
+    .footer{
+        bottom:0;
+        position:fixed;
+    }
+
+    .a{
+        margin-top: 2vw;
+        margin-bottom: 3vw;
+        padding: 1vw;
+        background-color: blue;
+        color: white;
+        border-radius:0.5vw;
+        margin: auto;
+    }
+</style>
+
+
+
+<body>
+    <div class="boxProduto">
+        <table class="table-hover">
+            <tr>
+                <th>UserId</th>
+                <th>PedidoId</th>
+                <th>NomeProd</th>
+                <th>Descricao</th>
+                <th>Preco</th>
+                <th>Qtd</th>
+                <th>TotalPedido</th>
+                <th>DataPedido</th>
+                <th>StatusPedido</th>
+                <th>Total Compra</th>
+                <th colspan="2">&nbsp;</th>
+            </tr>
+        
+            @foreach (var pedido in Model)
+            {
+                <tr>
+                    <td>@pedido.UserId</td>
+                    <td>@pedido.idPedido</td>
+                    <td>@pedido.produtos.NomeProd</td>
+                    <td>@pedido.produtos.Descricao</td>
+                    <td>@pedido.pedidosProdutos.Preco</td>
+                    <td>@pedido.pedidosProdutos.Qtd</td>
+                    <td>@pedido.pedidosProdutos.TotalPedido</td>
+                    <td>@pedido.DataPedido</td>            
+                    <td>@pedido.StatusPedido</td>
+                    <td><a href="/pedidos/delete/@pedido.idPedido">Retirar do Carrinho</a></td>
+                    <td><a href="/pedidos/update/@pedido.idPedido">Update</a></td>
+                </tr>
+            }
+        </table>
+    <a class="a" href="/carrinho/FinalizarPedido/@idPedido">Finalizar Pedido</a>    
+    @* <a href="/pedidos/AddPedido" class="btn btn-primary">Adicionar ao Pedido</a> *@
+    @* <a href="/pedidos/Update/@Model.IdPedido" class="btn btn-primary">Adicionar ao Pedido</a> *@
+    </div>
+</body>

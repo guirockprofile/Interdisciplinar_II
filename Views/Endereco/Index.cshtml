@@ -1,0 +1,48 @@
+@model List<Endereco>
+
+
+<style>
+    .table{
+        margin-top: 10vw;
+    }
+
+
+
+    .footer{
+        position:fixed;
+    }
+</style>
+
+
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Rua</th>
+            <th>Número da residencia</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>CEP</th>
+            <th>UserId</th>
+            <th colspan="2">&nbsp;</th>
+        </tr>
+
+        @foreach(var Endereco in Model)
+        {
+        <tr>
+            <td>@Endereco.IdEndereco</td>
+            <td>@Endereco.Rua</td>
+            <td>@Endereco.Numero</td>
+            <td>@Endereco.Bairro</td>
+            <td>@Endereco.Cidade</td>
+            <td>@Endereco.Estado</td>
+            <td>@Endereco.CEP</td>
+            <td>@Endereco.UserId</td>
+            <td><a href="/Endereco/delete/@Endereco.IdEndereco">Delete</a></td>
+            <td><a href="/Endereco/update/@Endereco.IdEndereco">Update</a></td>
+            </tr>
+        }
+</table>
+<a href="/endereco/create" class="btn btn-primary">Create</a>

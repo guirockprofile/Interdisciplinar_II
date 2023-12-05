@@ -1,0 +1,15 @@
+@model Categorias
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/categorias/index">Categorias</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Update</li>
+  </ol>
+</nav>
+
+<form action="/categorias/update/@Model.IdCategoria" method="POST">
+    <input name="NomeCategoria" class="form-control" value="@Model.NomeCategoria" />
+    <br/>
+    <button class="btn btn-primary">Atualizar</button>
+</form>

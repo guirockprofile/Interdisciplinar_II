@@ -1,0 +1,48 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+@using Microsoft.AspNetCore.Http
+@using System.Text.Json;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    string? session = HttpContextAccessor.HttpContext.Session.GetString("users");
+    Users? users = JsonSerializer.Deserialize<Users>(session);
+}
+<style>
+   .boxProduto{
+        margin-top: 10vw;
+        height:auto;
+        width: auto;
+    }
+
+    table .table-hover{
+        max-width:60vw;
+        max-height:90vw;
+    }
+
+    .table-hover{
+        font-family:Arial;
+        font-size: 1vw;
+    }
+
+    .footer{
+        bottom:0;
+    }
+</style>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/endereco/index">Endereco</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create</li>
+  </ol>
+</nav>
+<div class="boxProduto">
+<h2>INSIRA SEU ENDEREÇO</h2>
+<form action="/endereco/create" method="POST">
+    <input name="Rua" class="form-control" placeholder="Nome da Rua"/>
+    <input name="Numero" class="form-control" placeholder="Numero da residencia"/>
+    <input name="Bairro" class="form-control" placeholder="Nome do Bairro"/>
+    <input name="Cidade" class="form-control" placeholder="Ciadade"/>
+    <input name="Estado" class="form-control" placeholder="Estado"/>
+    <input name="CEP" class="form-control" placeholder="CEP"/>
+    <br/>
+    <button class="btn btn-primary">Salvar</button>
+</form>
+</div>

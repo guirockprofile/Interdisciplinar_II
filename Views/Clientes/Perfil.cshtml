@@ -1,0 +1,169 @@
+@using Microsoft.AspNetCore.Http
+@using System.Text.Json;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{Layout = "/Views/Shared/Layout.cshtml";}
+@model Clientes
+@{string? session = HttpContextAccessor.HttpContext.Session.GetString("users");
+        Users? users = JsonSerializer.Deserialize<Users>(session);}
+<style>
+        
+    .boxProduto{
+        margin-top: 10vw;
+        height:auto;
+        width: auto;
+    }
+
+    .carrinhoProduto {
+  display: flex;
+  flex-direction: row;
+  font-size: 1vw;
+  padding: 1.3vw;
+  background-color: rgb(27, 19, 173);
+  border-radius: 1.4vw;
+  text-align: center;
+  max-width: 15vw;
+  max-height: 7vh;
+  margin: auto;
+  align-items:center;
+  margin-top: 3vw;
+  line-height: 3vh;
+}
+.carrinhoProduto a {
+  color: white;
+}
+    .perfilBox {
+  padding: 4vw;
+  position: relative; /* Alterado para relative */
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15vw;
+  background-color: rgb(238, 238, 238);
+  border-radius: 2vw;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column; /* Adicione isso para alinhar o conteúdo no centro vertical */
+  width: 60%;
+  margin: auto;
+  margin-top: 15vw;
+  margin-bottom: 10vw;
+}
+
+.tituloPrincipal {
+  margin-bottom: 1vw;
+  flex-direction: row;
+  font-size: 1vw;
+  padding: 1vw;
+  background-color: rgb(27, 19, 173);
+  border-radius: 1.4vw;
+  color: white;
+}
+
+.tituloPrincipal h2 {
+  font-size: 1.5vw;
+}
+
+.titulo h2 {
+  font-size: 1.6vw;
+  font-weight: bold;
+}
+
+.dados{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+  align-items: center;
+}
+
+.input-container input{
+  margin-bottom: 1vw;
+}
+
+.dados h2{
+  margin-bottom: 0;
+}
+
+.input-dados {
+  display: none;
+}
+
+.dados img{
+  margin-left: 0.3vw;
+  max-width: 2vw;
+  max-height: 2vh;
+}
+
+.dados input {
+  border: 0.01vw solid; 
+  border-radius: 0.4vw;
+  padding: 0.3vw; 
+  max-width: 15vw ; 
+  font-size: 1.1vw;
+  text-align: center; 
+}
+
+.dados h2 {
+  color: black;
+  font-size: 1vw;
+  padding: 0.9vw;
+  background-color: white;
+  border-radius: 1.3vw;
+  margin-top: 0.2vw;
+  font-weight: bold;
+}
+    </style>
+ <body>
+    <div class="perfilBox">
+      <div>
+        <div class="tituloPrincipal">
+          <h2>Informações sobre a Conta</h2>
+        </div>
+        <div class="titulo">
+          <h2>Nome:</h2>
+        </div>
+        <div class="dados">
+          <div class="input-container">
+            @Model.Nome
+          </div>
+        </div>
+                
+        <div class="titulo">
+          <h2>Sobrenome:</h2>
+        </div>
+        <div class="dados">
+          <div class="input-container">
+            @Model.Sobrenome
+          </div>
+        </div>
+
+        <div class="titulo">
+          <h2>CPF:</h2>
+        </div>
+        <div class="dados">
+          <div class="input-container">
+              @Model.CPF
+          </div>
+        </div>
+
+        <div class="titulo">
+          <h2>Telefone:</h2>
+        </div> 
+        <div class="dados">
+          <div class="input-container">
+            @Model.Telefone"
+          </div>
+        </div>
+        </div>
+         <div class="carrinhoProduto">
+        <a href="/Clientes/Update/@users.IdUser">Atualizar seus Dados</a>
+    </div>
+    </div>   
+   
+    </div>
+</body>

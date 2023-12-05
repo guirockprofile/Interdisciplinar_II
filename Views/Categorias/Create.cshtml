@@ -1,0 +1,14 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/categorias/index">Categorias</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create</li>
+  </ol>
+</nav>
+
+<form action="/categorias/create" method="POST">
+    <input name="NomeCategoria" class="form-control" placeholder="Nome"/>
+    <br/>
+    <button class="btn btn-primary">Salvar</button>
+</form>

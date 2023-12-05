@@ -1,0 +1,20 @@
+@model Endereco
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/endereco/index">Endereco</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Update</li>
+  </ol>
+</nav>
+
+<form action="/endereco/update/@Model.IdEndereco" method="POST">
+    <input name="Rua" class="form-control" value="@Model.Rua" />
+    <input name="Numero" class="form-control" value="@Model.Numero"/>
+    <input name="Bairro" class="form-control" value="@Model.Bairro"/>
+    <input name="Cidade" class="form-control" value="@Model.Cidade"/>
+    <input name="Estado" class="form-control" value="@Model.Estado"/>
+    <input name="CEP" class="form-control" value="@Model.CEP"/>
+    <br/>
+    <button class="btn btn-primary">Atualizar</button>
+</form>

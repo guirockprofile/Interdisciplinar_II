@@ -1,0 +1,121 @@
+@using Microsoft.AspNetCore.Http
+@using System.Text.Json;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Intergeek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/styles/home.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="/src/icons/favicon.ico" type="image/x-icon" />
+    <script src="/scripts/home.js"></script>
+  </head>
+  <style>
+    .textoLabel{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1vw;  
+      }
+      .barraPesquisa input{
+  margin-left: 0;
+  margin-right: 0;
+  width: 10vw;
+  height: 3.5vh;
+  outline: 0;
+  border-radius: 1.4vw;
+
+}
+    .barraPesquisa button{
+      font-family: Arial, Helvetica, sans-serif1;
+  font-weight: bold;
+  border-radius: 0.7vw;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 0.3vw;
+    }
+      .footer{
+        bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(27, 19, 173);
+  align-items: center;
+      }
+    }
+  </style>
+  <header class="header">    
+          @{
+          string? session = HttpContextAccessor.HttpContext.Session.GetString("users");
+           Users? users = null;
+            if (session != null)
+            {
+                users = JsonSerializer.Deserialize<Users>(session);
+            }
+            else
+            {
+                users = new Users();
+            }
+          };
+        <div class="header">
+          <div class="icon-logo">
+            <img class="logo" src="/src/images/Logo-Geek-VIP.png" />
+            <a href="/home/home">Intergeek</a>
+          </div>
+          <div class="barraPesquisa">
+            <form  action="/home/searchLog" method="post">
+                    <label class="textoLabel"for="search">Pesquisar por nome:</label>
+                    <input class="form" type="text" name="search" id="search" />
+                    <button type="submit">Pesquisar</button>
+                </form>
+          </div>
+          <div>
+            <nav class="navbar">
+                    
+              <a>@users.Name </a>
+              <a href="/users/logout" class="btn btn-danger">Sair</a>
+              <a href="/Carrinho/Index/@users.IdUser">Carrinho</a>
+              <img class="carrinho" src="/src/images/carrinho.png" />
+            </nav>
+          </div>
+        </div>
+    </header>
+    @RenderBody()
+
+    <footer class="footer">
+      <div class="rodape">
+        <ul>
+          <h3>Novidades</h3>
+          <li><a href="#">O que vem por ai</a></li>
+        </ul>
+
+        <ul>
+          <h3>Links</h3>
+          <li><a href="/home/home">Home</a></li>
+          <li><a href="">Sobre</a></li>
+          <li><a href="admin.html">Produto</a></li>
+        </ul>
+
+        <ul>
+          <h3>Suporte</h3>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Nos Contacte</a></li>
+        </ul>
+
+        <ul>
+          <h3>Conta</h3>
+          <li><a href="/Clientes/Perfil/@users.IdUser">Perfil</a></li>
+          @* <li><a href="/Endereco/Create/@users.IdUser">insira seu Endereco aqui</a></li>
+          <li><a href="/Endereco/Endereco/@users.IdUser">Endereco</a></li> *@
+        </ul>
+      </div>
+    </footer>
+</html>

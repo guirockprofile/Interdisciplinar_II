@@ -1,0 +1,43 @@
+@model List<Clientes>
+<link rel="stylesheet" href="/styles/Cliente.css" type="text/css" />
+<style>
+    .table{
+        margin-top: 10vw;
+    }
+
+
+
+    .footer{
+        position:fixed;
+    }
+</style>
+
+
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Nome do Clientes</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
+            @* <th>Senha</th> *@
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th colspan="2">&nbsp;</th>
+        </tr>
+
+        @foreach(var Clientes in Model)
+        {
+        <tr>
+            <td>@Clientes.IdCliente</td>
+            <td>@Clientes.Nome</td>
+            <td>@Clientes.Sobrenome</td>
+            <td>@Clientes.CPF</td>
+            <td>@Clientes.Telefone</td>
+            <td><a href="/Clientes/delete/@Clientes.IdCliente">Delete</a></td>
+            <td><a href="/Clientes/update/@Clientes.IdCliente">Update</a></td>
+            </tr>
+        }
+</table>
+<a href="/Clientes/create" class="btn btn-primary">Create</a>

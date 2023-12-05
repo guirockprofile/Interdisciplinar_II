@@ -1,0 +1,16 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/clientes/index">Clientes</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create</li>
+  </ol>
+</nav>
+
+<form action="/clientes/create" method="POST">
+    <input name="Nome" class="form-control" placeholder="Nome"/>
+    <input name="Sobrenome" class="form-control" placeholder="Sobrenome"/>
+    <input name="CPF" class="form-control" placeholder="CPF"/>
+    <input name="Telefone" class="form-control" placeholder="Telefone"/>
+    <br/>
+    <button class="btn btn-primary">Salvar</button>
+</form>

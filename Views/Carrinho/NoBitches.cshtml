@@ -1,0 +1,36 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+@using Microsoft.AspNetCore.Http
+@using System.Text.Json;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    string? session = HttpContextAccessor.HttpContext.Session.GetString("users");
+    Users? users = JsonSerializer.Deserialize<Users>(session);
+}
+<style> 
+
+    .boxProduto{
+        margin-top: 10vw;
+        height:auto;
+        width: auto;
+    }
+
+    table .table-hover{
+        max-width:60vw;
+        max-height:90vw;
+    }
+
+    .table-hover{
+        font-family:Arial;
+        font-size: 1vw;
+    }
+
+    .footer{
+        bottom:0;
+        position:fixed;
+    }
+</style>
+<body>
+    <div class="boxProduto">
+        <h2>@users.Name voce não tem produtos no seu carrinho</h2>
+    </div>
+</body>

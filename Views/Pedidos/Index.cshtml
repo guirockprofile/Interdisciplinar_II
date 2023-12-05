@@ -1,0 +1,54 @@
+@model List<Pedidos>
+
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+<style>
+    .table{
+        margin-top: 10vw;
+    }
+
+
+
+    .footer{
+        position:fixed;
+    }
+</style>   
+
+
+    <table class="table table-hover">
+        <tr>
+            <th>PedidoId</th>
+            <th>ProdutoId</th>
+            <th>UserId</th>
+            <th>NomeProd</th>
+            <th>Descricao</th>
+            <th>NomeCategoria</th>
+            <th>Preco</th>
+            <th>Qtd</th>
+            <th>TotalPedido</th>
+            <th>DataPedido</th>
+            <th>StatusPedido</th>
+            <th colspan="2">&nbsp;</th>
+        </tr>
+
+        @foreach(var pedidos in Model)
+        {
+        <tr>        
+            <td>@pedidos.idPedido</td>
+            <td>@pedidos.pedidosProdutos.IdProduto</td>
+            <td>@pedidos.UserId</td>
+            <td>@pedidos.produtos.NomeProd</td>
+            <td>@pedidos.produtos.Descricao</td>
+            <td>@pedidos.categoria.NomeCategoria</td>
+            <td>@pedidos.pedidosProdutos.Preco</td>
+            <td>@pedidos.pedidosProdutos.Qtd</td>
+            <td>@pedidos.pedidosProdutos.TotalPedido</td>
+            <td>@pedidos.DataPedido</td>
+            <td>@pedidos.StatusPedido</td>
+            <td><a href="/pedidos/delete/@pedidos.idPedido">Delete</a></td>
+            <td><a href="/pedidos/update/@pedidos.idPedido">Update</a></td>
+
+        </tr>
+        }
+</table>
+
+<a href="/pedidos/AddPedido" class="btn btn-primary">Adicionar ao Pedido</a>
