@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Intergeek - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+    <link rel="icon" href="imagens/Logo-Geek-VIP.png" type="image/x-icon" />
+    <script src="main.js"></script>
+    <style>
+      body{
+        font-family: "Arial", sans-serif;
+      }
+      div{
+        background-color: rgb(27, 19, 173);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 5vw;
+        text-align: center;
+        border-radius: 2vw;
+      }
+      div h2{
+        color: white;
+        font-size: 2.4vw;
+      }
+      input{
+        padding: 2vh;
+        border: none;
+        border-radius: 2vw;
+        font-size: 1.2vw;
+        outline: none;
+        margin-bottom: 1.3vw;
+      }
+      button{
+        margin-top: 1vw;
+        font-family: "Arial", sans-serif; 
+        font-weight: bold;
+        border-radius: 0.7vw;
+        background-color: white;
+        color: black;
+        border: none;
+        padding: 1.1vw;
+      }
+      button:hover{
+        background-color: rgb(159, 159, 159);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        <h2>Intergeek</h2>
+        <input type="text" placeholder="Login">
+        <br>
+        <input type="password" placeholder="Senha">
+        <br>
+        <button onclick="window.location.href='home.html'">Entrar</button>
+        <br>
+          <button onclick="window.location.href='cadastro.html'">Cadastra-se</button>
+      </div>
+    </div>  
+  </body>

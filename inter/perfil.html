@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intergeek</title>
+    <link rel="icon" href="imagens/Logo-Geek-VIP.png" type="image/x-icon" />
+    <link rel="stylesheet" href="perfil.css" />
+    <script src="perfil.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="icon-logo">
+        <img class="logo" src="imagens/Logo-Geek-VIP.png" />
+        <a href="home.html">Intergeek</a>
+      </div>
+      <div class="barraPesquisa">
+        <input
+          class="barra"
+          type="text"
+          class="search-text"
+          placeholder="  Pesquisar..."
+        />
+        <a href="#">
+          <img class="lupa" src="imagens/lupa.png" alt="Lupa" />
+        </a>
+      </div>
+      <div>
+        <nav class="navbar">
+          <a href="login.html">Login</a>
+          <a href="carrinho.html">Carrinho</a>
+          <img class="carrinho" src="imagens/carrinho.png" />
+        </nav>
+      </div>
+    </header>
+
+    
+    <div class="perfilBox">
+      <div>
+        <div class="tituloPrincipal">
+          <h2>Informações sobre a Conta</h2>
+        </div>
+        <div class="titulo">
+          <h2>Nome:</h2>
+        </div>
+        <div class="dados">
+          <div class="input-container">
+            <input
+              type="text"
+              value="Samuel"
+              placeholder="Editar..."
+              readonly
+            />
+            
+          </div>
+        </div>
+                
+        <div class="titulo">
+          <h2>Sobrenome:</h2>
+        </div>
+        <div class="dados">
+          <div class="input-container">
+            <input
+              type="text"
+              value="Fava de Brito"
+              placeholder="Editar..."
+              readonly
+            />
+            
+          </div>
+        </div>
+        <div class="titulo">
+          <h2>Email:</h2>
+        </div>
+        <div class="dados">
+          <div class="input-container">
+            <input
+              type="text"
+              value="samueldev@gmail.com"
+              placeholder="Editar..."
+              readonly
+            />
+            
+          </div>
+        </div>
+        <div class="titulo">
+          <h2>CPF:</h2>
+        </div>
+        <div class="dados">
+          <div class="input-container">
+            <input
+              type="text"
+              value="123.456.789-39"
+              placeholder="Editar..."
+              readonly
+            />
+            
+            
+          </div>
+        </div>
+        <div class="titulo">
+          <h2>Telefone:</h2>
+        </div> 
+        <div class="dados">
+          <div class="input-container">
+            <input
+              type="text"
+              value="98123-4567"
+              placeholder="Editar..."
+              readonly
+            />
+            
+          </div>
+        </div>
+    
+        <button id="open-modal">Editar</button>
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+        <div class="modal-header">
+          <h2>Edite seus dados</h2>
+          <button id="close-modal">Sair e Salvar</button>
+        </div>
+        <div class="modal-body">
+          <p>Nome:</p>
+          <input type="text" placeholder="nome...">
+          <p>Sobrenome:</p>
+          <input type="text" placeholder="Sobrenome...">
+          <p>Email:</p>
+          <input type="text" placeholder="Email...">
+          <p>CPF:</p>
+          <input type="text" placeholder="CPF...">
+          <p>Telefone:</p>
+          <input type="text" placeholder="Telefone...">
+        </div>
+        </div>    
+      </div>
+    </div>
+
+
+    <footer class="footer">
+      <div class="rodape">
+        <ul>
+          <h3>Novidades</h3>
+          <li><a href="#">O que vem por ai</a></li>
+        </ul>
+
+        <ul>
+          <h3>Links</h3>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Produto</a></li>
+        </ul>
+
+        <ul>
+          <h3>Suporte</h3>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Nos Contacte</a></li>
+        </ul>
+
+        <ul>
+          <h3>Conta</h3>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <div class="whatsapp">
+      <a href="https://web.whatsapp.com/">
+        <img src="imagens/17.png" width="70vw" alt="Fale Conosco whatsapp">
+      </a>
+
+  </body>
+</html>

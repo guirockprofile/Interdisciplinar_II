@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Intergeek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="/Logo-Geek-VIP.png" type="image/x-icon" />
+    <script src="home.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="icon-logo">
+        <img class="logo" src="imagens/Logo-Geek-VIP.png" />
+        <h2>Intergeek</h2>
+      </div>
+      <div class="barraPesquisa">
+        <input
+          class="barra"
+          type="text"
+          class="search-text"
+          placeholder="  Pesquisar..."
+        />
+        <a href="#">
+          <img class="lupa" src="imagens/lupa.png" alt="Lupa" />
+        </a>
+      </div>
+      <div>
+        <nav class="navbar">
+          <a href="login.html">Login</a>
+          <a href="#">Carrinho</a>
+          <img class="carrinho" src="imagens/carrinho.png" />
+        </nav>
+      </div>
+    </header>
+    <div class="carrossel">
+      <div class="tituloCarrossel">
+        <h2>Promoções</h2>
+      </div>
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active boxCarrossel">
+            <img src="imagens/1.jpg" alt="" style="width: 100%; height: 75vh" />
+            <div class="carousel-caption">
+              <p>Produto1</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="imagens/2.png" alt="" style="width: 100%; height: 75vh" />
+            <div class="carousel-caption">
+              <p>Produto2</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="imagens/3.jpg" alt="" style="width: 100%; height: 75vh" />
+            <div class="carousel-caption">
+              <p>Produto3</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="imagens/4.jpg" alt="" style="width: 100%; height: 75vh" />
+            <div class="carousel-caption">
+              <p>Produto4</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Proximo</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- <div class="produto">
+      <div class="produto-nome">
+        <h3>God of War Ragnaro</h3>
+      </div>
+      <div>
+        <img
+          class="produto1-foto"
+          src="imagens/produto1-foto.png"
+          alt="produto1-foto"
+        />
+      </div>
+      <div class="produto-preco">
+        <h3>preço</h3>
+      </div>
+    </div> -->
+
+    <footer class="footer">
+      <div class="rodape">
+        <ul>
+          <h3>Novidades</h3>
+          <li><a href="#">O que vem por ai</a></li>
+        </ul>
+
+        <ul>
+          <h3>Links</h3>
+          <li><a href="home.css">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Produto</a></li>
+        </ul>
+
+        <ul>
+          <h3>Suporte</h3>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Nos Contacte</a></li>
+        </ul>
+
+        <ul>
+          <h3>Conta</h3>
+          <li><a href="#">Perfil</a></li>
+          <li><a href="#">Carrinho</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

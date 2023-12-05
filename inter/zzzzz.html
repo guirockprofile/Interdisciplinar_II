@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>perfil - Intergeek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="perfil.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="imagens/Logo-Geek-VIP.png" type="image/x-icon" />
+    <script src="padrao.js"></script>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.whatsapp{
+  position: fixed;
+  bottom: 5vw;
+  right: 3vw;
+  z-index: 9999;
+}
+
+body {
+  min-height: 100vh;
+  background-color: white;
+  background-position: center;
+  align-items: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 1vw 5vw;
+  background: rgb(27, 19, 173);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.header h2 {
+  color: white;
+}
+
+.logo {
+  height: 10vh;
+  width: 8vw;
+  margin-right: 0;
+}
+
+.icon-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style: italic;
+}
+
+.icon-logo a {
+  font-size: 2vw;
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.icon-logo a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.lupa,
+.carrinho {
+  width: 1.3vw;
+  height: 2.5vh;
+  align-items: center;
+  margin-left: 0.5vw;
+}
+
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 1vw;
+}
+
+.navbar a {
+  font-size: 1.2vw;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 3vw;
+}
+.barraPesquisa {
+  display: flex;
+  align-items: center;
+}
+
+.barraPesquisa ::placeholder {
+  font-size: 1vw;
+}
+
+.barra {
+  margin-left: 0;
+  margin-right: 0;
+  width: 30vw;
+  height: 4.5vh;
+  outline: 0;
+  border-radius: 1.4vw;
+}
+
+.navbar a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.perfilBox {
+  padding: 4vw;
+  position: relative; /* Alterado para relative */
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15vw;
+  background-color: rgb(238, 238, 238);
+  border-radius: 2vw;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column; /* Adicione isso para alinhar o conteúdo no centro vertical */
+  width: 60%;
+  margin: auto;
+  margin-top: 15vw;
+  margin-bottom: 10vw;
+}
+
+.tituloPrincipal {
+  margin-bottom: 1vw;
+  flex-direction: row;
+  font-size: 1vw;
+  padding: 1vw;
+  background-color: rgb(27, 19, 173);
+  border-radius: 1.4vw;
+  color: white;
+}
+
+.tituloPrincipal h2 {
+  font-size: 1.5vw;
+}
+
+.titulo h2 {
+  font-size: 1.6vw;
+  font-weight: bold;
+}
+
+.dados{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.dados img{
+  max-width: 2vw;
+  max-height: 2vh;
+}
+
+.dados h2 {
+  color: black;
+  font-size: 1vw;
+  padding: 0.9vw;
+  background-color: white;
+  border-radius: 1.3vw;
+  margin-top: 0.2vw;
+  font-weight: bold;
+}
+
+/* aqui é a barra */
+
+.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(27, 19, 173);
+  align-items: center;
+}
+
+.rodape {
+  display: flex;
+  color: white;
+  text-align: center;
+}
+
+.rodape ul {
+  margin-left: 3vw;
+  width: 25%;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.rodape h3 {
+  margin-bottom: 2vh;
+  font-weight: 800;
+  font-size: 1.5vw;
+}
+
+.rodape a:hover {
+  text-decoration: none;
+  color: black; 
+}
+
+footer a {
+  font-size: 1.3vw;
+  color: white;
+  text-decoration: none;
+}
+
+.rodape ul li {
+  margin: 1.3vh;
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="icon-logo">
+        <img class="logo" src="imagens/Logo-Geek-VIP.png" />
+        <a href="home.html">Intergeek</a>
+      </div>
+      <div class="barraPesquisa">
+        <input
+          class="barra"
+          type="text"
+          class="search-text"
+          placeholder="  Pesquisar..."
+        />
+        <a href="#">
+          <img class="lupa" src="imagens/lupa.png" alt="Lupa" />
+        </a>
+      </div>
+      <div>
+        <nav class="navbar">
+          <a href="login.html">Login</a>
+          <a href="carrinho.html">Carrinho</a>
+          <img class="carrinho" src="imagens/carrinho.png" />
+        </nav>
+      </div>
+    </header>
+
+    <div class="perfilBox">
+      <div>
+        <div class="tituloPrincipal">
+          <h2>Informações sobre a Conta</h2>
+        </div>
+        <div class="titulo">
+          <h2>Nome:</h2>
+        </div>
+        <div class="dados">
+          <h2>Samuel</h2>
+          <a href="#">
+            <img src="imagens/eidt.png">
+          </a>
+        </div>
+        <div class="titulo">
+          <h2>Sobrenome:</h2>
+        </div>
+        <div class="dados">
+          <h2>Fava de Brito</h2>
+        </div>
+        <div class="titulo">
+          <h2>Email:</h2>
+        </div>
+        <div class="dados">
+          <h2>samueldev@gmail.com</h2>
+        </div>
+        <div class="titulo">
+          <h2>CPF:</h2>
+        </div>
+        <div class="dados">
+          <h2>123.456.789.01</h2>
+        </div>
+        <div class="titulo">
+          <h2>Telefone:</h2>
+        </div>
+        <div class="dados">
+          <h2>98765-4321</h2>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="rodape">
+        <ul>
+          <h3>Novidades</h3>
+          <li><a href="#">O que vem por ai</a></li>
+        </ul>
+
+        <ul>
+          <h3>Links</h3>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Produto</a></li>
+        </ul>
+
+        <ul>
+          <h3>Suporte</h3>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Nos Contacte</a></li>
+        </ul>
+
+        <ul>
+          <h3>Conta</h3>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <div class="whatsapp">
+      <a href="https://web.whatsapp.com/">
+        <img src="imagens/17.png" width="70vw" alt="Fale Conosco whatsapp">
+      </a>
+
+  </body>
+</html>
