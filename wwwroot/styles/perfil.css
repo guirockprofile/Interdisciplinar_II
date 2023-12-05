@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.whatsapp{
+  position: fixed;
+  bottom: 5vw;
+  right: 3vw;
+  z-index: 2;
+}
+
+body {
+  min-height: 100vh;
+  background-color: white;
+  background-position: center;
+  align-items: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 1vw 5vw;
+  background: rgb(27, 19, 173);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.header h2 {
+  color: white;
+}
+
+.logo {
+  height: 10vh;
+  width: 8vw;
+  margin-right: 0;
+}
+
+.icon-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style: italic;
+}
+
+.icon-logo a {
+  font-size: 2vw;
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.icon-logo a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.lupa,
+.carrinho {
+  width: 1.3vw;
+  height: 2.5vh;
+  align-items: center;
+  margin-left: 0.5vw;
+}
+
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 1vw;
+}
+
+.navbar a {
+  font-size: 1.2vw;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 3vw;
+}
+.barraPesquisa {
+  display: flex;
+  align-items: center;
+}
+
+.barraPesquisa ::placeholder {
+  font-size: 1vw;
+}
+
+.barra {
+  margin-left: 0;
+  margin-right: 0;
+  width: 30vw;
+  height: 4.5vh;
+  outline: 0;
+  border-radius: 1.4vw;
+}
+
+.navbar a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.perfilBox {
+  padding: 4vw;
+  position: relative; /* Alterado para relative */
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15vw;
+  background-color: rgb(238, 238, 238);
+  border-radius: 2vw;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column; /* Adicione isso para alinhar o conteúdo no centro vertical */
+  width: 60%;
+  margin: auto;
+  margin-top: 15vw;
+  margin-bottom: 10vw;
+}
+
+.tituloPrincipal {
+  margin-bottom: 1vw;
+  flex-direction: row;
+  font-size: 1vw;
+  padding: 1vw;
+  background-color: rgb(27, 19, 173);
+  border-radius: 1.4vw;
+  color: white;
+}
+
+.tituloPrincipal h2 {
+  font-size: 1.5vw;
+}
+
+.titulo h2 {
+  font-size: 1.6vw;
+  font-weight: bold;
+}
+
+.dados{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+  align-items: center;
+}
+
+.input-container input{
+  margin-bottom: 1vw;
+}
+
+.dados h2{
+  margin-bottom: 0;
+}
+
+.input-dados {
+  display: none;
+}
+
+.dados img{
+  margin-left: 0.3vw;
+  max-width: 2vw;
+  max-height: 2vh;
+}
+
+.dados input {
+  border: 0.01vw solid; 
+  border-radius: 0.4vw;
+  padding: 0.3vw; 
+  max-width: 15vw ; 
+  font-size: 1.1vw;
+  text-align: center; 
+}
+
+.dados h2 {
+  color: black;
+  font-size: 1vw;
+  padding: 0.9vw;
+  background-color: white;
+  border-radius: 1.3vw;
+  margin-top: 0.2vw;
+  font-weight: bold;
+}
+
+
+
+
+button:hover{
+  background-color: rgb(159, 159, 159);
+}
+button:hover {
+  opacity: 1;
+}
+
+#fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 90%;
+  background-color: #fff;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  z-index: 10;
+}
+
+#fade,
+#modal {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.modal-header button{
+  margin-top:0;
+}
+
+.modal-body p {
+  font-size: 1.1vw;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0.5vw;
+  font-weight: bold;
+
+}
+
+.modal-body input{
+  margin-bottom:0.6vw;
+  border: none;
+  border: 0.01vw solid;
+  border-radius: 0.7vw;
+  padding: 0.6vw;
+}
+
+#modal.hide,
+#fade.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal.hide {
+  top: 0;
+}
+
+button{
+  margin-top: 1vw;
+  font-family: "Arial", sans-serif; 
+  font-weight: bold;
+  border-radius: 0.7vw;
+  background-color: white;
+  color: white;
+  border: none;
+  padding: 1.1vw;
+  background-color: rgb(27, 19, 173);
+}
+
+
+
+
+
+
+
+/* aqui é a barra */
+
+.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(27, 19, 173);
+  align-items: center;
+}
+
+.rodape {
+  display: flex;
+  color: white;
+  text-align: center;
+}
+
+.rodape ul {
+  margin-left: 3vw;
+  width: 25%;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.rodape h3 {
+  margin-bottom: 2vh;
+  font-weight: 800;
+  font-size: 1.5vw;
+}
+
+.rodape a:hover {
+  text-decoration: none;
+  color: black; 
+}
+
+footer a {
+  font-size: 1.3vw;
+  color: white;
+  text-decoration: none;
+}
+
+.rodape ul li {
+  margin: 1.3vh;
+}
+

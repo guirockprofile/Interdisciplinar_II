@@ -1,0 +1,88 @@
+.boxProduto {
+    padding: 4vw;
+    position: relative; /* Alterado para relative */
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15vw;
+    background-color: rgb(238, 238, 238);
+    border-radius: 2vw;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Adicione isso para alinhar o conteúdo no centro vertical */
+    width: 60%;
+    margin: auto;
+    margin-top: 15vw;
+    margin-bottom: 10vw;
+  }
+  .tituloProduto {
+    margin-bottom: 1vw;
+    flex-direction: row;
+    padding: 1.1vw;
+    background-color: rgb(27, 19, 173);
+    border-radius: 1.4vw;
+  }
+  .tituloProduto h2 {
+    color: white;
+    font-size: 1.4vw;
+  }
+  .descricaoProduto {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.3vw;
+  }
+  .imgProduto img {
+    flex-direction: row;
+    max-width: 20vw;
+    max-height: 40vh;
+    margin-bottom: 2vw;
+  }
+  
+  /* gostaria de deixar essa "caixinha no centro" */
+  .precoProduto {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.3vw;
+    padding: 1vw;
+    background-color: rgb(27, 19, 173);
+    border-radius: 1.4vw;
+    text-align: center;
+    max-width: 7vw;
+    max-height: 7vh;
+    margin: auto;
+    line-height: 3vh;
+  }
+  .precoProduto p {
+    color: white;
+  }
+  
+  .precoProduto a:hover {
+    text-decoration: none;
+  }
+  
+  button {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    border-radius: 0.7vw;
+    background-color: rgb(27, 19, 173);
+    border: none;
+    padding: 1.1vw;
+    width: 15vw;
+    height: 8vh;
+  }
+  
+  button:hover {
+    background-color: rgb(51, 45, 171);
+  }
+  
+  .button {
+    color: white;
+    font-size: 1.2vw;
+  }
+  
+  .carrinhoProduto {
+    margin-top: 1.5vw;
+    flex-direction: row;
+  }
